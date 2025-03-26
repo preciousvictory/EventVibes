@@ -1,4 +1,4 @@
-import { EditIcon } from "../../assets/icons"
+import { EditIcon, ProfileIcon } from "../../assets/icons"
 import { SideBarList } from "../../constants"
 
 const SideBar = () => {
@@ -12,11 +12,15 @@ const SideBar = () => {
                     </div>
                 ))}
             </nav>
-            <div className="mt-auto flex justify-center items-center space-x-3 px-2 absolute bottom-8">
-                <div className="h-10 w-10 rounded-full bg-gray-600"></div>
-                <div>
-                    <p className="text-sm font-semibold">Umar Faruq</p>
-                    <p className="text-xs text-gray-400">0x1234...op7890qrst</p>
+            <div className="flex justify-between w-full items-center space-x-3 absolute bottom-8 px-6">
+                <div className="flex items-center space-x-2">
+                    <div className="h-10 w-10 rounded-full bg-[var(--gray)] flex items-center justify-center">
+                        <ProfileIcon />
+                    </div>
+                    <div>
+                        <p className="text-sm font-semibold">Umar Faruq</p>
+                        <p className="text-xs text-gray-400">0x1234...op7890qrst</p>
+                    </div>
                 </div>
                 <EditIcon />
             </div>

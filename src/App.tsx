@@ -7,6 +7,7 @@ import { TooltipProvider } from "./components/ui/Tooltip";
 import ConnectWallet from "./pages/auth/ConnectWallet";
 import SignupForm from "./pages/auth/SignupForm";
 import NotFound from "./pages/error/NotFound";
+import Search from "./pages/(users)/Search";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,8 @@ const App = () => (
 
           <Route path="/get-started" element={<SignupForm />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/search" element={<Search />} />
+
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
