@@ -2,6 +2,7 @@ import { LoveIcon } from "../../assets/icons"
 import { PhotoView } from "../../data"
 
 export const PhotoCard = ({ photo }: { photo: PhotoView }) => {
+    
 
     return (
         <div className="relative rounded-2xl overflow-hidden aspect-square h-full w-full cursor-pointer shadow-lg hover:shadow-lg transition-shadow" style={{ '--tw-shadow-color': '#3F024F52' } as React.CSSProperties}>
