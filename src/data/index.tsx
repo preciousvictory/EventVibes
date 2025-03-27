@@ -28,172 +28,441 @@ export const featuredMedia = [
   },
 ];
 
-export type events = {
+export type PhotoView = {
+  id: string,
+  creator: string,
   name: string,
-  organization: string,
-  favourite: number,
-  image: string
+  image: string,
+  time_takes: Date,
+  Location: string,
+  total_likes: number
 }
 
-export type categories = {
+export type ImageView = {
+  event_profile: string,
+  event_banner: string,
+  event_POAP: string,
+}
+
+export type EventView = {
+  id: string,
+  creator: string,
+  time: Date,
+  location: string,
+  name: string,
+  description: string,
+  eventImages: ImageView,
+  total_Images: number,
+  total_likes: number
+}
+
+export type categoriesProps = {
   title: string,
-  events: events[]
+  events: EventView[]
 }
 
-export const categories = [
+export const trendingEvents: EventView[] = [
+  {
+    id: '1',
+    creator: "Sui On Campus",
+    time: new Date('23rd April, 2024'),
+    location: 'San Francisco, CA',
+    name: "Karaoke Nights",
+    description: 'The premier developer conference for blockchain and web3 technologies, featuring workshops, keynotes, and networking opportunities.',
+    eventImages: {
+      event_profile: 'images/image4.jpeg',
+      event_banner: 'images/banner.jpeg',
+      event_POAP: 'images/image4.jpeg',
+    },
+    total_Images: 30,
+    total_likes: 45
+  },
+  {
+    id: '2',
+    creator: "Sui On Campus",
+    time: new Date('23rd April, 2024'),
+    location: 'San Francisco, CA',
+    name: "FlutterBytes",
+    description: 'The premier developer conference for blockchain and web3 technologies, featuring workshops, keynotes, and networking opportunities.',
+    eventImages: {
+      event_profile: 'images/image4.jpeg',
+      event_banner: 'images/banner.jpeg',
+      event_POAP: 'images/image4.jpeg',
+    },
+    total_Images: 30,
+    total_likes: 45
+  },
+  {
+    id: '3',
+    creator: "Sui On Campus",
+    time: new Date('23rd April, 2024'),
+    location: 'San Francisco, CA',
+    name: "Sui Hackathon",
+    description: 'The premier developer conference for blockchain and web3 technologies, featuring workshops, keynotes, and networking opportunities.',
+    eventImages: {
+      event_profile: 'images/image2.jpeg',
+      event_banner: 'images/banner.jpeg',
+      event_POAP: 'images/image2.jpeg',
+    },
+    total_Images: 30,
+    total_likes: 45
+  },
+  {
+    id: '4',
+    creator: "Sui On Campus",
+    time: new Date('23rd April, 2024'),
+    location: 'San Francisco, CA',
+    name: "GDG Tech Fest",
+    description: 'The premier developer conference for blockchain and web3 technologies, featuring workshops, keynotes, and networking opportunities.',
+    eventImages: {
+      event_profile: 'images/image1.jpeg',
+      event_banner: 'images/banner.jpeg',
+      event_POAP: 'images/image1.jpeg',
+    },
+    total_Images: 30,
+    total_likes: 45
+  },
+  {
+    id: '5',
+    creator: "Sui On Campus",
+    time: new Date('23rd April, 2024'),
+    location: 'San Francisco, CA',
+    name: "GDG Tech Fest",
+    description: 'The premier developer conference for blockchain and web3 technologies, featuring workshops, keynotes, and networking opportunities.',
+    eventImages: {
+      event_profile: 'images/image2.jpeg',
+      event_banner: 'images/banner.jpeg',
+      event_POAP: 'images/image2.jpeg',
+    },
+    total_Images: 30,
+    total_likes: 45
+  },
+  {
+    id: '6',
+    creator: "Sui On Campus",
+    time: new Date('23rd April, 2024'),
+    location: 'San Francisco, CA',
+    name: "GDG Tech Fest",
+    description: 'The premier developer conference for blockchain and web3 technologies, featuring workshops, keynotes, and networking opportunities.',
+    eventImages: {
+      event_profile: 'images/image3.jpeg',
+      event_banner: 'images/banner.jpeg',
+      event_POAP: 'images/image3.jpeg',
+    },
+    total_Images: 30,
+    total_likes: 45
+  },
+]
+
+export const categories: categoriesProps[] = [
   {
     title: "Entertainments",
     events: [
       {
+        id: '1',
+        creator: "Sui On Campus",
+        time: new Date('23rd April, 2024'),
+        location: 'San Francisco, CA',
         name: "Karaoke Nights",
-        organization: "Sui On Campus",
-        favourite: 43,
-        image: 'images/image1.jpeg'
+        description: 'The premier developer conference for blockchain and web3 technologies, featuring workshops, keynotes, and networking opportunities.',
+        eventImages: {
+          event_profile: 'images/image4.jpeg',
+          event_banner: 'images/banner.jpeg',
+          event_POAP: 'images/image4.jpeg',
+        },
+        total_Images: 30,
+        total_likes: 45
       },
       {
+        id: '2',
+        creator: "Sui On Campus",
+        time: new Date('23rd April, 2024'),
+        location: 'San Francisco, CA',
         name: "Karaoke Nights",
-        organization: "Sui On Campus",
-        favourite: 43,
-        image: 'images/image4.jpeg'
+        description: 'The premier developer conference for blockchain and web3 technologies, featuring workshops, keynotes, and networking opportunities.',
+        eventImages: {
+          event_profile: 'images/image4.jpeg',
+          event_banner: 'images/banner.jpeg',
+          event_POAP: 'images/image4.jpeg',
+        },
+        total_Images: 30,
+        total_likes: 45
       },
       {
+        id: '3',
+        creator: "Sui On Campus",
+        time: new Date('23rd April, 2024'),
+        location: 'San Francisco, CA',
         name: "Karaoke Nights",
-        organization: "Sui On Campus",
-        favourite: 43,
-        image: 'images/image4.jpeg'
+        description: 'The premier developer conference for blockchain and web3 technologies, featuring workshops, keynotes, and networking opportunities.',
+        eventImages: {
+          event_profile: 'images/image2.jpeg',
+          event_banner: 'images/banner.jpeg',
+          event_POAP: 'images/image2.jpeg',
+        },
+        total_Images: 30,
+        total_likes: 45
       },
       {
+        id: '4',
+        creator: "Sui On Campus",
+        time: new Date('23rd April, 2024'),
+        location: 'San Francisco, CA',
         name: "Karaoke Nights",
-        organization: "Sui On Campus",
-        favourite: 43,
-        image: 'images/image2.jpeg'
+        description: 'The premier developer conference for blockchain and web3 technologies, featuring workshops, keynotes, and networking opportunities.',
+        eventImages: {
+          event_profile: 'images/image1.jpeg',
+          event_banner: 'images/banner.jpeg',
+          event_POAP: 'images/image1.jpeg',
+        },
+        total_Images: 30,
+        total_likes: 45
       },
       {
-        name: "GDG Tech Fest",
-        organization: "Sui On Campus",
-        favourite: 43,
-        image: 'images/image3.jpeg'
-      },
-      {
+        id: '5',
+        creator: "Sui On Campus",
+        time: new Date('23rd April, 2024'),
+        location: 'San Francisco, CA',
         name: "Karaoke Nights",
-        organization: "Sui On Campus",
-        favourite: 43,
-        image: 'images/image4.jpeg'
+        description: 'The premier developer conference for blockchain and web3 technologies, featuring workshops, keynotes, and networking opportunities.',
+        eventImages: {
+          event_profile: 'images/image2.jpeg',
+          event_banner: 'images/banner.jpeg',
+          event_POAP: 'images/image2.jpeg',
+        },
+        total_Images: 30,
+        total_likes: 45
       },
     ]
   },
   {
-    title: "Tech Meetups", events: [
-      {
-        name: "FlutterBytes",
-        organization: "Sui On Campus",
-        favourite: 43,
-        image: 'images/image1.jpeg'
-      },
-      {
-        name: "Sui Hackathon",
-        organization: "Sui On Campus",
-        favourite: 43,
-        image: 'images/image2.jpeg'
-      },
-      {
-        name: "GDG Tech Fest",
-        organization: "Sui On Campus",
-        favourite: 43,
-        image: 'images/image3.jpeg'
-      },
-      {
-        name: "Karaoke Nights",
-        organization: "Sui On Campus",
-        favourite: 43,
-        image: 'images/image4.jpeg'
-      },
-      {
-        name: "Karaoke Nights",
-        organization: "Sui On Campus",
-        favourite: 43,
-        image: 'images/image4.jpeg'
-      },
-      {
-        name: "Networking Session",
-        organization: "Sui On Campus",
-        favourite: 43,
-        image: 'images/image4.jpeg'
-      },
-    ]
-  },
-  {
-    title: "Lifestyles",
+    title: "Conferences",
     events: [
       {
+        id: '1',
+        creator: "Sui On Campus",
+        time: new Date('23rd April, 2024'),
+        location: 'San Francisco, CA',
         name: "Karaoke Nights",
-        organization: "Sui On Campus",
-        favourite: 43,
-        image: 'images/image1.jpeg'
+        description: 'The premier developer conference for blockchain and web3 technologies, featuring workshops, keynotes, and networking opportunities.',
+        eventImages: {
+          event_profile: 'images/image4.jpeg',
+          event_banner: 'images/banner.jpeg',
+          event_POAP: 'images/image4.jpeg',
+        },
+        total_Images: 30,
+        total_likes: 45
       },
       {
-        name: "Karaoke Nights",
-        organization: "Sui On Campus",
-        favourite: 43,
-        image: 'images/image2.jpeg'
+        id: '2',
+        creator: "Sui On Campus",
+        time: new Date('23rd April, 2024'),
+        location: 'San Francisco, CA',
+        name: "FlutterBytes",
+        description: 'The premier developer conference for blockchain and web3 technologies, featuring workshops, keynotes, and networking opportunities.',
+        eventImages: {
+          event_profile: 'images/image4.jpeg',
+          event_banner: 'images/banner.jpeg',
+          event_POAP: 'images/image4.jpeg',
+        },
+        total_Images: 30,
+        total_likes: 45
       },
       {
-        name: "Karaoke Nights",
-        organization: "Sui On Campus",
-        favourite: 43,
-        image: 'images/image3.jpeg'
+        id: '3',
+        creator: "Sui On Campus",
+        time: new Date('23rd April, 2024'),
+        location: 'San Francisco, CA',
+        name: "Sui Hackathon",
+        description: 'The premier developer conference for blockchain and web3 technologies, featuring workshops, keynotes, and networking opportunities.',
+        eventImages: {
+          event_profile: 'images/image2.jpeg',
+          event_banner: 'images/banner.jpeg',
+          event_POAP: 'images/image2.jpeg',
+        },
+        total_Images: 30,
+        total_likes: 45
       },
       {
-        name: "Karaoke Nights",
-        organization: "Sui On Campus",
-        favourite: 43,
-        image: 'images/image4.jpeg'
+        id: '4',
+        creator: "Sui On Campus",
+        time: new Date('23rd April, 2024'),
+        location: 'San Francisco, CA',
+        name: "GDG Tech Fest",
+        description: 'The premier developer conference for blockchain and web3 technologies, featuring workshops, keynotes, and networking opportunities.',
+        eventImages: {
+          event_profile: 'images/image1.jpeg',
+          event_banner: 'images/banner.jpeg',
+          event_POAP: 'images/image1.jpeg',
+        },
+        total_Images: 30,
+        total_likes: 45
       },
       {
-        name: "Karaoke Nights",
-        organization: "Sui On Campus",
-        favourite: 43,
-        image: 'images/image4.jpeg'
+        id: '5',
+        creator: "Sui On Campus",
+        time: new Date('23rd April, 2024'),
+        location: 'San Francisco, CA',
+        name: "GDG Tech Fest",
+        description: 'The premier developer conference for blockchain and web3 technologies, featuring workshops, keynotes, and networking opportunities.',
+        eventImages: {
+          event_profile: 'images/image2.jpeg',
+          event_banner: 'images/banner.jpeg',
+          event_POAP: 'images/image2.jpeg',
+        },
+        total_Images: 30,
+        total_likes: 45
       },
       {
-        name: "Karaoke Nights",
-        organization: "Sui On Campus",
-        favourite: 43,
-        image: 'images/image4.jpeg'
+        id: '6',
+        creator: "Sui On Campus",
+        time: new Date('23rd April, 2024'),
+        location: 'San Francisco, CA',
+        name: "GDG Tech Fest",
+        description: 'The premier developer conference for blockchain and web3 technologies, featuring workshops, keynotes, and networking opportunities.',
+        eventImages: {
+          event_profile: 'images/image3.jpeg',
+          event_banner: 'images/banner.jpeg',
+          event_POAP: 'images/image3.jpeg',
+        },
+        total_Images: 30,
+        total_likes: 45
       },
     ]
   },
-];
+  {
+    title: "Sports & Fitness",
+    events: [
+      {
+        id: '1',
+        creator: "Sui On Campus",
+        time: new Date('23rd April, 2024'),
+        location: 'San Francisco, CA',
+        name: "Karaoke Nights",
+        description: 'The premier developer conference for blockchain and web3 technologies, featuring workshops, keynotes, and networking opportunities.',
+        eventImages: {
+          event_profile: 'images/image4.jpeg',
+          event_banner: 'images/banner.jpeg',
+          event_POAP: 'images/image4.jpeg',
+        },
+        total_Images: 30,
+        total_likes: 45
+      },
+      {
+        id: '2',
+        creator: "Sui On Campus",
+        time: new Date('23rd April, 2024'),
+        location: 'San Francisco, CA',
+        name: "FlutterBytes",
+        description: 'The premier developer conference for blockchain and web3 technologies, featuring workshops, keynotes, and networking opportunities.',
+        eventImages: {
+          event_profile: 'images/image4.jpeg',
+          event_banner: 'images/banner.jpeg',
+          event_POAP: 'images/image4.jpeg',
+        },
+        total_Images: 30,
+        total_likes: 45
+      },
+      {
+        id: '3',
+        creator: "Sui On Campus",
+        time: new Date('23rd April, 2024'),
+        location: 'San Francisco, CA',
+        name: "Sui Hackathon",
+        description: 'The premier developer conference for blockchain and web3 technologies, featuring workshops, keynotes, and networking opportunities.',
+        eventImages: {
+          event_profile: 'images/image2.jpeg',
+          event_banner: 'images/banner.jpeg',
+          event_POAP: 'images/image2.jpeg',
+        },
+        total_Images: 30,
+        total_likes: 45
+      },
+      {
+        id: '4',
+        creator: "Sui On Campus",
+        time: new Date('23rd April, 2024'),
+        location: 'San Francisco, CA',
+        name: "GDG Tech Fest",
+        description: 'The premier developer conference for blockchain and web3 technologies, featuring workshops, keynotes, and networking opportunities.',
+        eventImages: {
+          event_profile: 'images/image1.jpeg',
+          event_banner: 'images/banner.jpeg',
+          event_POAP: 'images/image1.jpeg',
+        },
+        total_Images: 30,
+        total_likes: 45
+      },
+      {
+        id: '5',
+        creator: "Sui On Campus",
+        time: new Date('23rd April, 2024'),
+        location: 'San Francisco, CA',
+        name: "GDG Tech Fest",
+        description: 'The premier developer conference for blockchain and web3 technologies, featuring workshops, keynotes, and networking opportunities.',
+        eventImages: {
+          event_profile: 'images/image2.jpeg',
+          event_banner: 'images/banner.jpeg',
+          event_POAP: 'images/image2.jpeg',
+        },
+        total_Images: 30,
+        total_likes: 45
+      },
+      {
+        id: '6',
+        creator: "Sui On Campus",
+        time: new Date('23rd April, 2024'),
+        location: 'San Francisco, CA',
+        name: "GDG Tech Fest",
+        description: 'The premier developer conference for blockchain and web3 technologies, featuring workshops, keynotes, and networking opportunities.',
+        eventImages: {
+          event_profile: 'images/image3.jpeg',
+          event_banner: 'images/banner.jpeg',
+          event_POAP: 'images/image3.jpeg',
+        },
+        total_Images: 30,
+        total_likes: 45
+      },
+    ]
+  },
+]
 
-export const trendingEvents = [
+
+export const photos: PhotoView[] = [
   {
-    name: "Karaoke Nights",
-    organization: "Sui On Campus",
-    favourite: 43,
-    image: 'images/image1.jpeg'
+    id: "1",
+    creator: "Precious Victory",
+    name: "Image 1",
+    image: "images/image1.jpeg",
+    time_takes: new Date('23rd April, 2024'),
+    Location: 'San Francisco, CA',
+    total_likes: 49
   },
   {
-    name: "Karaoke Nights",
-    organization: "Sui On Campus",
-    favourite: 43,
-    image: 'images/image2.jpeg'
+    id: "2",
+    creator: "Umar Faruq",
+    name: "Image 2",
+    image: "images/image3.jpeg",
+    time_takes: new Date('23rd April, 2024'),
+    Location: 'San Francisco, CA',
+    total_likes: 49
   },
   {
-    name: "Karaoke Nights",
-    organization: "Sui On Campus",
-    favourite: 43,
-    image: 'images/image3.jpeg'
+    id: "2",
+    creator: "Joshua Obimba",
+    name: "Image 3",
+    image: "images/image2.jpeg",
+    time_takes: new Date('23rd April, 2024'),
+    Location: 'San Francisco, CA',
+    total_likes: 49
   },
   {
-    name: "Karaoke Nights",
-    organization: "Sui On Campus",
-    favourite: 43,
-    image: 'images/image4.jpeg'
-  },
-  {
-    name: "Karaoke Nights",
-    organization: "Sui On Campus",
-    favourite: 43,
-    image: 'images/image4.jpeg'
+    id: "4",
+    creator: "Gospel",
+    name: "Image 4",
+    image: "images/image4.jpeg",
+    time_takes: new Date('23rd April, 2024'),
+    Location: 'San Francisco, CA',
+    total_likes: 49
   },
 ]

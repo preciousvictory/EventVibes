@@ -1,7 +1,8 @@
-import { SearchIcon, UploadIcon } from "../assets/icons";
+import { UploadIcon } from "../assets/icons";
 import { Logo } from "../assets/Logo";
 import { MainProps } from "../types/components";
 import AnimatedButton from "./ui/Button";
+import SearchInput from "./ui/SearchInput";
 
 const MainHeaderLayout: React.FC<MainProps> = ({ children, className = '' }) => {
 
@@ -16,18 +17,12 @@ const MainHeaderLayout: React.FC<MainProps> = ({ children, className = '' }) => 
             <Logo /> <span className="text-black">Event Vibe</span>
           </div>
           <div className="flex items-center justify-center space-x-4 flex-row">
-            <div className="w-full rounded-lg bg-[var(--inputColor)] flex flex-row gap-2 items-center justify-start px-2 text-left">
-              <SearchIcon />
-
-              <input
-                type="text"
-                placeholder="Search events"
-                className=" py-2 text-white outline-none"
-              />
+            <div >
+              <SearchInput placeholder="Search events..."/>
             </div>
 
             <div>
-              <AnimatedButton icon={<UploadIcon />}>
+              <AnimatedButton icon={<UploadIcon />} className="shadow-black/75 shadow-xl hover:shadow-lg transition-shadow  w-[150px]">
                 <span>Upload</span>
               </AnimatedButton>
             </div>

@@ -11,7 +11,7 @@ const GradientLayout: React.FC<GradientProps> = ({children, className=''}) => {
       </div>
 
       <div
-        className="relative p-[2px] rounded-2xl bg-gradient-to-r from-[#73138C] to-[#9E11C3] group transition-all w-1/3"
+        className="relative p-[2px] rounded-2xl bg-radial from-[#9309B7] to-[#3F024F]/6 group w-1/3 shadow-lg hover:shadow-xl transition-shadow" style={{ '--tw-shadow-color': '#2A01348C' } as React.CSSProperties}
       >
         <div className={classn}>
           {children}
