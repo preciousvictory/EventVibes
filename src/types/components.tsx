@@ -20,3 +20,8 @@ export type MainProps = {
   children: React.ReactNode;
   className?: string;
 };
+
+export type InputLayoutProps = {
+  children: React.ReactNode;
+  className?: string;
+};

@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import { FilterIcon } from "../../assets/icons";
 import MainHeaderLayout from "../../components/MainHeaderLayout";
 import { EventCard } from "../../components/ui/EventCard";
 import SideBar from "../../components/ui/SideBar";
 import { categories, EventView, trendingEvents } from "../../data";
 import { cleanString } from "./SeeMoreEvents";
+import Filter from "../../components/ui/Filter";
 
 const Events = () => {
   const navigate = useNavigate();
@@ -26,10 +26,7 @@ const Events = () => {
       {/* Main Content */}
       <MainHeaderLayout>
         <div className="flex items-center justify-end  space-x-2 ">
-          <div className="flex flex-row items-center justify-center gap-1 rounded-lg p-2 bg-[var(--inputColor)] cursor-pointer">
-            <FilterIcon />
-            <span>Filter</span>
-          </div>
+          <Filter />
         </div>
 
         {/* Trending Events Section */}

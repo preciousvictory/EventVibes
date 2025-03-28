@@ -1,12 +1,13 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
-import SideBar from "../../components/ui/SideBar"
+import { EventSideBar } from "../../components/ui/SideBar"
 import { EventView, photos, PhotoView, trendingEvents } from "../../data"
 import { cleanString } from "./SeeMoreEvents";
 import MainLayout from "../../components/MainLayout";
-import { CalenderIcon, FilterIcon, LocationIcon, LoveIcon, NFTIcon, People, UploadIcon } from "../../assets/icons";
+import { CalenderIcon, LocationIcon, LoveIcon, NFTIcon, People, UploadIcon } from "../../assets/icons";
 import SearchInput from "../../components/ui/SearchInput";
 import AnimatedButton from "../../components/ui/Button";
 import { PhotoCard } from "../../components/ui/PhotoCard";
+import Filter from "../../components/ui/Filter";
 
 const EventPage = () => {
     const [searchParams] = useSearchParams();
@@ -23,21 +24,25 @@ const EventPage = () => {
     const handleClickImage = (photo: PhotoView) => {
         const path = `/images?q=${cleanString(photo.name)}`;
         navigate(path);
-        navigate(path, { 
-            state: { 
-              imageUrl: photo.image,
-              id: photo.id,
-              photosList: PhotosList,
-              currentImage: PhotosList.indexOf(photo),
-              eventName: event?.name
+        navigate(path, {
+            state: {
+                imageUrl: photo.image,
+                id: photo.id,
+                photosList: PhotosList,
+                currentImage: PhotosList.indexOf(photo),
+                eventName: event?.name
             }
-          });
+        });
+    }
+
+    const handleUpload = () => {
+        navigate("/upload");
     }
 
     return (
         <div className="flex h-screen bg-[var(--secondary)]/80 text-white relative">
             {/* Sidebar */}
-            <SideBar />
+            <EventSideBar />
 
             {/* Main Content */}
             <MainLayout>
@@ -103,12 +108,9 @@ const EventPage = () => {
                         <h2 className="text-2xl font-semibold">Event Gallery</h2>
                         <div className="flex flex-row gap-4 items-center">
                             <SearchInput placeholder="AI search galleries" />
-                            <div className="flex flex-row items-center justify-center gap-1 rounded-lg p-2 bg-[var(--inputColor)] cursor-pointer">
-                                <FilterIcon />
-                                <span>Filter</span>
-                            </div>
-                            <div>
-                                <AnimatedButton icon={<UploadIcon />} className="shadow-black/65 shadow-xl hover:shadow-lg transition-shadow px-2 w-[150px]">
+                            <Filter />
+                            <div onClick={() => handleUpload()}>
+                                <AnimatedButton icon={<UploadIcon />} className="shadow-black/75 shadow-xl hover:shadow-lg transition-shadow  w-[150px]">
                                     <span>Upload</span>
                                 </AnimatedButton>
                             </div>

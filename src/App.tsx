@@ -11,6 +11,7 @@ import Events from "./pages/(users)/Dashboard";
 import SeeMoreEvents from "./pages/(users)/SeeMoreEvents";
 import EventPage from "./pages/(users)/EventPage";
 import ImagePage from "./pages/(users)/ImagePage";
+import ImageUploadform from "./pages/(users)/ImageUploadform";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
           <Route path={`/view-category-event`} element={<SeeMoreEvents />} />
           <Route path="/view-event" element={<EventPage />} />
           <Route path="/images" element={<ImagePage />} />
+          <Route path="/upload" element={<ImageUploadform />} />
 
         </Routes>
       </BrowserRouter>
