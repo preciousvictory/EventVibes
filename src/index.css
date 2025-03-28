@@ -5,12 +5,16 @@
   :root {
     --primary: #73138c;
     --primary2: #9e11c3;
+    --primary3: #21012ACC;
     --secondary: #121212;
     --secondary2: #121212cc;
     --secondary3: #212121;
     --gray: #9e9e9e;
+    --grey2: #EEEEEE;
     --inputColor: #37373766;
     --inputBorder: #737373;
+    --navItemColor: #9E9E9E;
+    --navItemColorHover: #E37BFF;
   }
 
   html {
