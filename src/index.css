@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&family=Poppins:wght@600&display=swap');
 @import "tailwindcss";
 
 @layer base {
@@ -15,10 +16,28 @@
     --navItemColor: #9E9E9E;
     --navItemColorHover: #E37BFF;
   }
+
+  html {
+    font-family: 'Urbanist', sans-serif;
+  }
+}
+
+@layer components {
+  .gradient-blur {
+    background: linear-gradient(287.09deg, rgba(77, 3, 96, 0.16) 24.87%, rgba(145, 5, 181, 0.4) 137.7%);
+    filter: blur(200px);
+  }
+  
+  .button-shadow {
+    box-shadow: 0px 48px 48px -32px rgba(28, 32, 40, 0.5), inset 2px 4px 16px rgba(248, 248, 248, 0.06);
+    backdrop-filter: blur(50px);
+  }
 }
 
 body {
   background-color: var(--secondary);
   margin: 0;
   min-height: 100vh;
+  font-family: 'Urbanist', sans-serif;
+  color: #FFFFFF;
 }
