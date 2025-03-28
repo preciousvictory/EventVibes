@@ -7,6 +7,8 @@ import ConnectWallet from "./pages/auth/ConnectWallet";
 import SignupForm from "./pages/auth/SignupForm";
 import NotFound from "./pages/error/NotFound";
 import Search from "./pages/(users)/Search";
+import Desktop4 from "./pages/landpage/LandingPage";
+import NFT from "./pages/landpage/NFT";
 import Events from "./pages/(users)/Dashboard";
 import SeeMoreEvents from "./pages/(users)/SeeMoreEvents";
 import EventPage from "./pages/(users)/EventPage";
@@ -20,7 +22,8 @@ const App = () => (
     <TooltipProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LandingPage />} />
+          <Route path="/" element={<Desktop4 />} />
+          <Route path="/nft" element={<NFT />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/connectwallet" element={<ConnectWallet />} />
 
