@@ -2,8 +2,9 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import GradientLayout from "../../components/GradientLayout";
-import { Logo } from "../../assets/Logo";
+import { EventVibesLogo } from "../../assets/Logo";
 import AnimatedButton from "../../components/ui/Button";
+import { useNavigate } from "react-router-dom";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -11,6 +12,8 @@ const formSchema = z.object({
 });
 
 type FormData = z.infer<typeof formSchema>;
+
+
 
 export default function SignupForm() {
   const {
@@ -20,16 +23,17 @@ export default function SignupForm() {
   } = useForm<FormData>({
     resolver: zodResolver(formSchema),
   });
+  const navigate = useNavigate()
 
   const onSubmit = (data: FormData) => {
-    console.log("Form submitted:", data);
-  };
+    console.log('Fprm Submitted: ', data);
+
+    navigate('/events')
+  }
 
   return (
     <GradientLayout>
-      <div className="flex flex-row bg-[var(--gray)] py-2 px-4 w-fit text-center mb-4">
-        <Logo /> <span className="text-black">EventVibe</span>
-      </div>
+      <EventVibesLogo />
 
       <h2 className="mb-3 text-center text-2xl font-semibold text-white">
         Let's Get You Started
@@ -45,6 +49,7 @@ export default function SignupForm() {
             {...register("name")}
             type="text"
             placeholder="e.g Jon Doe"
+            required
             className="w-full rounded-lg border border-[var(--inputBorder)] bg-[var(--inputColor)] px-4 py-2 text-white outline-none focus:ring-2 focus:ring-purple-500"
           />
           {errors.name && (
@@ -61,6 +66,7 @@ export default function SignupForm() {
             {...register("email")}
             type="email"
             placeholder="example@yahoo.com"
+            required
             className="w-full rounded-lg border border-[var(--inputBorder)] bg-[var(--inputColor)] px-4 py-2 text-white outline-none focus:ring-2 focus:ring-purple-500"
           />
           {errors.email && (

@@ -1,7 +1,8 @@
-import { GoogleIcon, Wallet } from "../../assets/icons";
+import { Wallet } from "../../assets/icons";
 import { Logo } from "../../assets/Logo";
 import GradientLayout from "../../components/GradientLayout";
 import AnimatedButton from "../../components/ui/Button";
+import ZkLoginButton from "./zkLogin";
 
 export default function ConnectWallet() {
     return (
@@ -29,13 +30,7 @@ export default function ConnectWallet() {
                 </span>
                 <hr className="flex-grow border-[var(--gray)] border-2" />
             </div>
-            <AnimatedButton
-                icon={<GoogleIcon />}
-                variant="secondary"
-                className="w-full shadow-black/75 shadow-xl hover:shadow-lg transition-shadow"
-            >
-                Continue with Google
-            </AnimatedButton>
+            <ZkLoginButton />
         </GradientLayout>
     );
 }

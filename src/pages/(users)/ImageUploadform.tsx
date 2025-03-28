@@ -1,14 +1,11 @@
 import { useState } from "react";
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import FormInput from "../../components/ui/FormInput";
 import AnimatedButton from "../../components/ui/Button";
 import RoundRectGradient from "../../components/ui/RoundRectGradient";
 import { ArrowLeftLongIcon, CancelIcon, Ellipse, ImageIconWhite, InfoYellowIcon, UploadIcon } from "../../assets/icons";
 import { useNavigate } from "react-router-dom";
-import SearchInput from "../../components/ui/SearchInput";
 import SelectDropdown from "../../components/ui/SelectDropdown";
-// import { useDropzone } from "react-dropzone";
-
 
 const MAX_FILE_SIZE_MB= 20;
 
@@ -17,12 +14,6 @@ export default function ImageUploadform() {
   const { handleSubmit, register } = useForm();
   const [files, setFiles] = useState<File[]>([]);
   const [tags, setTags] = useState<string>("");
-
-  const onDrop = (acceptedFiles: File[]) => {
-    setFiles(acceptedFiles);
-  };
-
-  // const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
   const goBack = () => {
     navigate(-1);
@@ -118,7 +109,7 @@ export default function ImageUploadform() {
                               </div>
                               <div className="flex flex-col text-left items-start">
                                 <p className="text-[10px]">{file.name}</p>
-                                <p className="text-[6px] text-[#BDBDBD]">{file.size}</p>
+                                <p className="text-[6px] text-[#BDBDBD]">{formatFileSize(file.size)}</p>
                               </div>
                             </div>
                             <div className="cursor-pointer" onClick={() => RemoveSelectedImages(file)}>
