@@ -1,17 +1,17 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { ArrowLeftIcon, ArrowLeftLongIcon, ArrowRightIcon, DownloadIcon, LoveIcon, ShareIcon } from "../../assets/icons";
 import CircleBoxGradient from "../../components/ui/CircleBoxGradient";
-import RoundRectGradient from "../../components/ui/roundRectGradient";
+import RoundRectGradient from "../../components/ui/RoundRectGradient";
 import { cleanString } from "./SeeMoreEvents";
 
 const ImagePage = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    const { imageUrl, photosList = [], currentImage = 0 } = location.state || {};
+    const { imageUrl, photosList = [], currentImage = 0, eventName } = location.state || {};
 
     const goBack = () => {
         // navigate(-1);
-        navigate('/events')
+        navigate(`/view-event?q=${cleanString(eventName)}`);
     };
 
     const handleNextImage = () => {
@@ -92,21 +92,26 @@ const ImagePage = () => {
                         </RoundRectGradient>
                     </div>
 
-                    <div
-                        className="relative p-[2px] rounded-2xl bg-radial from-[#9309B7] to-[#3F024F]/60 
-                    group w-2/3 h-full shadow-[0_20px_50px_rgba(42,1,52,0.55)] 
-                    hover:shadow-[0_25px_60px_rgba(42,1,52,0.7)] transition-all duration-300"
-                    >
-                        <div className="flex flex-col items-center justify-center gap-3 bg-[var(--secondary)] relative transition-all w-full h-full rounded-2xl text-center text-white">
-                            {imageUrl && (
-                                <img
-                                    src={imageUrl}
-                                    alt={photosList[currentImage]?.name || 'image'}
-                                    className="object-cover rounded-xl w-full h-full max-h-[70vh]"
-                                />
-                            )}
+                    <div className="flex flex-col items-center gap-6 h-full">
+                        <div
+                            className="relative p-[2px] rounded-2xl bg-radial from-[#9309B7] to-[#3F024F]/60 
+                                group w-2/3 h-full shadow-[0_20px_50px_rgba(42,1,52,0.55)] 
+                                hover:shadow-[0_25px_60px_rgba(42,1,52,0.7)] transition-all duration-300"
+                        >
+                            <div className="flex flex-col items-center justify-center gap-3 bg-[var(--secondary)] relative transition-all w-full h-full rounded-2xl text-center text-white">
+                                {imageUrl && (
+                                    <img
+                                        src={imageUrl}
+                                        alt={photosList[currentImage]?.name || 'image'}
+                                        className="object-cover rounded-xl w-full h-full max-h-[90vh]"
+                                    />
+                                )}
+                            </div>
                         </div>
+
+                        <div className="text-[var(--grey2)] text-sm">Uploaded on {photosList[currentImage]?.creator}</div>
                     </div>
+
 
                     <div onClick={handleNextImage} className="cursor-pointer">
                         <RoundRectGradient>

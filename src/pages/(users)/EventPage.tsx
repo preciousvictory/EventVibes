@@ -28,7 +28,8 @@ const EventPage = () => {
               imageUrl: photo.image,
               id: photo.id,
               photosList: PhotosList,
-              currentImage: PhotosList.indexOf(photo)
+              currentImage: PhotosList.indexOf(photo),
+              eventName: event?.name
             }
           });
     }
