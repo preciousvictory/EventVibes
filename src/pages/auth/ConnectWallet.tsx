@@ -1,5 +1,5 @@
 import { Wallet } from "../../assets/icons";
-import { Logo } from "../../assets/Logo";
+import { EventVibesLogo } from "../../assets/Logo";
 import GradientLayout from "../../components/GradientLayout";
 import AnimatedButton from "../../components/ui/Button";
 import ZkLoginButton from "./zkLogin";
@@ -7,8 +7,8 @@ import ZkLoginButton from "./zkLogin";
 export default function ConnectWallet() {
     return (
         <GradientLayout>
-            <div className="flex flex-row bg-[var(--gray)] py-2 px-4 w-fit text-center mb-8 ">
-                <Logo /> <span className="text-black">EventVibe</span>
+            <div className="mb-6">
+            <EventVibesLogo />
             </div>
             <AnimatedButton
                 variant="primary"
