@@ -13,6 +13,7 @@ import EventPage from "./pages/(users)/EventPage";
 import ImagePage from "./pages/(users)/ImagePage";
 import ImageUploadform from "./pages/(users)/ImageUploadform";
 import AIPoweredSearch from "./pages/(users)/AIPoweredSearch";
+import ZkLoginCallback from "./pages/auth/zkLoginCallback";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,8 @@ const App = () => (
           <Route path="/nft" element={<NFT />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/connectwallet" element={<ConnectWallet />} />
+          <Route path="/auth/callback" element={<ZkLoginCallback />} />
+
           <Route path="/get-started" element={<SignupForm />} />
           <Route path="/events" element={<Events />} />
           <Route path="/gallery" element={<Events />} />

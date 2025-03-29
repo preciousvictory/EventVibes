@@ -14,8 +14,8 @@ interface ImageViewerProps {
 
 const ImageViewer = ({
     currentPhoto,
-    photosList,
-    currentIndex,
+    // photosList,
+    // currentIndex,
     onClose,
     onNext,
     onPrevious
