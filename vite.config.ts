@@ -5,14 +5,14 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/', // This is crucial for Vercel
+  base: "/", // Ensures proper routing
   build: {
-    outDir: 'dist',
-    emptyOutDir: true,
-    rollupOptions: {
-      input: {
-        main: './index.html'
-      }
-    }
+    outDir: "dist",
   },
+  server: {
+    port: 3000, // Optional: Set the local dev server port 
+  },
+  preview: {
+    port: 5000, // Optional: Set the preview server port
+  }
 });
