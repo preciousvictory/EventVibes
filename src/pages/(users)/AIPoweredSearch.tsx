@@ -93,7 +93,7 @@ const AIPoweredSearch = () => {
 
                         <div className="w-full max-w-xl mx-auto flex justify-center">
                             <SearchInput 
-                                placeholder="Try 'Ashley speaking' or 'networking'"
+                                placeholder="Try 'speaking' or 'networking'"
                                 onChange={handleSearch}
                                 value={searchQuery}
                                 
