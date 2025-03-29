@@ -56,8 +56,8 @@ export const aiPhotos: PhotoView[] = [
   },
   {
     id: "2",
-    creator: "Joshua",
-    name: "Joshua's Tech Talk",
+    creator: "gospel",
+    name: "Gospel's Tech Talk",
     image: "gospelspeaking.jpg",
     time_takes: new Date(),
     Location: "Lagos, Nigeria",
