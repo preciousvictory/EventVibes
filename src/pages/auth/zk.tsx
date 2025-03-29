@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { generateNonce, generateRandomness, jwtToAddress } from '@mysten/sui/zklogin';
@@ -32,7 +34,7 @@ interface ZkProofResult {
   jwt: string;
 }
 
-const REDIRECT_URI = 'http://localhost:5173/get-started';
+const REDIRECT_URI = 'https://localhost:5173/auth/callback/';
 const CLIENT_ID = '1077253589644-vs9mrd60a0v10b50mlq6u1ok0qdk7js3.apps.googleusercontent.com';
 const FULLNODE_URL = 'https://fullnode.devnet.sui.io';
 const PROVER_URL = 'https://prover-dev.mystenlabs.com/v1';
