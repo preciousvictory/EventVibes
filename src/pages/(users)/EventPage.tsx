@@ -70,7 +70,7 @@ const EventPage = () => {
                                     </div>
                                     <div className="flex flex-row items-center gap-2">
                                         <People />
-                                        <p className="text-[var(--grey2)]/90 text-sm">1500 participants</p> {// change to event?.total attendences
+                                        <p className="text-[var(--grey2)]/90 text-sm">50 participants</p> {// change to event?.total attendences
                                         }
                                     </div>
                                     <div className="flex flex-row items-center gap-2">
@@ -107,7 +107,21 @@ const EventPage = () => {
                     <div className="flex flex-row gap-4 p-6 items-center justify-between">
                         <h2 className="text-2xl font-semibold">Event Gallery</h2>
                         <div className="flex flex-row gap-4 items-center">
-                            <SearchInput placeholder="AI search galleries" />
+                            <div className="relative">
+                                <SearchInput 
+                                    placeholder="AI search galleries" 
+                                    onClick={() => navigate("/ai-search")}
+                                    onKeyPress={(e) => {
+                                        if (e.key === 'Enter') {
+                                            navigate("/ai-search");
+                                        }
+                                    }}
+                                />
+                                <div 
+                                    className="absolute inset-0 cursor-pointer" 
+                                    onClick={() => navigate("/ai-search")} 
+                                />
+                            </div>
                             <Filter />
                             <div onClick={() => handleUpload()}>
                                 <AnimatedButton icon={<UploadIcon />} className="shadow-black/75 shadow-xl hover:shadow-lg transition-shadow  w-[150px]">
