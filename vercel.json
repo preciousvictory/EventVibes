@@ -1,8 +1,14 @@
 {
   "rewrites": [
-    { "source": "/", "destination": "/index.html" },
+    { 
+      "source": "/(.*)", 
+      "destination": "/index.html" 
+    },
+    { 
+      "source": "/auth/callback/:path*", 
+      "destination": "/index.html" 
+    },
     { "source": "/connectwallet", "destination": "/index.html" },
-    { "source": "/auth/callback/*", "destination": "/index.html" },
     { "source": "/nft", "destination": "/index.html" },
     { "source": "/get-started", "destination": "/index.html" },
     { "source": "/events", "destination": "/index.html" },
