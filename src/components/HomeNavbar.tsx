@@ -117,7 +117,6 @@ export const Navbar: React.FC = () => {
                 <button
                   onClick={() => handleNavClick(link)}
                   className={cn(
-                    "relative px-4 py-2 font-urbanist text-[14px] tracking-[0.2px] leading-[140%] transition-all duration-300 rounded-full",
                     activeSection === link.sectionId
                       ? "font-bold text-primary-200"
                       : "font-medium text-white/80 hover:text-primary-200"

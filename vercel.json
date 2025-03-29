@@ -1,26 +1,13 @@
 {
-  "rewrites": [
-    { 
-      "source": "/(.*)", 
-      "destination": "/index.html" 
+  "version": 2,
+  "routes": [
+    {
+      "src": "/auth/callback/.*",
+      "dest": "/index.html"
     },
-    { 
-      "source": "/auth/callback/:path*", 
-      "destination": "/index.html" 
-    },
-    { "source": "/connectwallet", "destination": "/index.html" },
-    { "source": "/nft", "destination": "/index.html" },
-    { "source": "/get-started", "destination": "/index.html" },
-    { "source": "/events", "destination": "/index.html" },
-    { "source": "/gallery", "destination": "/index.html" },
-    { "source": "/create-event", "destination": "/index.html" },
-    { "source": "/my-nft", "destination": "/index.html" },
-    { "source": "/favourite", "destination": "/index.html" },
-    { "source": "/search", "destination": "/index.html" },
-    { "source": "/ai-search", "destination": "/index.html" },
-    { "source": "/view-category-event", "destination": "/index.html" },
-    { "source": "/images", "destination": "/index.html" },
-    { "source": "/view-event", "destination": "/index.html" },
-    { "source": "/upload", "destination": "/index.html" },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ]
 }
