@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import MainHeaderLayout from "../../components/MainHeaderLayout";
 import { EventCard } from "../../components/ui/EventCard";
 import SideBar from "../../components/ui/SideBar";
-import { categories, EventView, trendingEvents } from "../../data";
+import {  EventView, trendingEvents } from "../../data";
 import { cleanString } from "./SeeMoreEvents";
 import Filter from "../../components/ui/Filter";
 
@@ -45,22 +45,7 @@ const Events = () => {
           </div>
         </div>
 
-        {/* Events Section */}
-        {categories.map((category) => (
-          <div key={category.title} className="mb-8">
-            <div className="flex flex-row items-center justify-between">
-              <h3 className="mb-4 text-2xl font-semibold text-left">{category.title}</h3>
-              <button onClick={() => handleClickCategory(category.title)} className="text-[#E37BFF] cursor-pointer">See More</button>
-            </div>
-            <div className="grid grid-cols-4 gap-4">
-              {category.events.map((event: EventView, index: number) => (
-                <div key={index} onClick={() => handleClickEvent(event.name)}>
-                  <EventCard event={event} />
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
+        
       </MainHeaderLayout>
     </div>
   );

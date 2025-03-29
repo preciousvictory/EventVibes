@@ -14,10 +14,11 @@ export const EventCard = ({ event }: { event: EventView }) => {
             </div>
 
             {/* Gradient footer */}
-            <div className="absolute bottom-0 w-full h-[30%] flex flex-row bg-gradient-to-t from-[var(--secondary)] to-transparent via-[var(--secondary)] via-20% p-3 items-center justify-between">
-                <div className="flex flex-col text-left">
-                    <h4 className="text-lg font-medium text-white">{event.name}</h4>
-                    <p className="text-sm text-white/80">From: {event.creator}</p>
+            <div className="absolute bottom-0 w-full h-[50%] flex flex-row bg-gradient-to-t from-[var(--secondary)] to-transparent via-[var(--secondary)] via-20% p-3 items-center justify-between">
+                <div className="flex flex-col text-left pr-2">
+                    <h4 className="text-lg font-bold text-white">{event.name}</h4>
+
+                    <p className="text-sm text-white/80 pb-1">From: {event.creator}</p>
                 </div>
 
                 <div className="flex items-center space-x-1 text-sm text-white/60">
