@@ -1,13 +1,12 @@
 {
   "rewrites": [
+    { "source": "/api/:path*", "destination": "/api/:path*" },
+    { "source": "/auth/:path*", "destination": "/auth/:path*" },
     { 
-      "source": "/(.*)", 
-      "destination": "/index.html" 
-    },
-    { 
-      "source": "/auth/callback/:path*", 
-      "destination": "/index.html" 
-    },
+    "source": "/auth/callback/:path*", 
+    "destination": "/index.html" 
+  },
+
     { "source": "/connectwallet", "destination": "/index.html" },
     { "source": "/nft", "destination": "/index.html" },
     { "source": "/get-started", "destination": "/index.html" },
