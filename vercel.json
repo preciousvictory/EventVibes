@@ -4,7 +4,6 @@
     { "source": "/connectwallet", "destination": "/index.html" },
     { "source": "/auth/callback/*", "destination": "/index.html" },
     { "source": "/nft", "destination": "/index.html" },
-    { "source": "/*", "destination": "/index.html" },
     { "source": "/get-started", "destination": "/index.html" },
     { "source": "/events", "destination": "/index.html" },
     { "source": "/gallery", "destination": "/index.html" },
@@ -16,6 +15,7 @@
     { "source": "/view-category-event", "destination": "/index.html" },
     { "source": "/images", "destination": "/index.html" },
     { "source": "/view-event", "destination": "/index.html" },
-    { "source": "/upload", "destination": "/index.html" }
+    { "source": "/upload", "destination": "/index.html" },
+    { "source": "/*", "destination": "/index.html" }
   ]
 }
