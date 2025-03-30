@@ -2,8 +2,8 @@
   "version": 2,
   "redirects": [
     {
-      "src": "/auth/callback",
-      "dest": "/index.html"
+      "source": "/auth/callback",
+      "destination": "/index.html",
     }
   ],
   "cleanUrls": true
