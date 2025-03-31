@@ -42,7 +42,7 @@ export default function ZkLoginCallback() {
             if (!decodedJwt.sub) throw new Error('Missing sub claim');
 
             const zkLoginUserAddress = jwtToAddress(idToken, sessionData.randomness);
-            console.log(zkLoginUserAddress);
+            // console.log(zkLoginUserAddress);
 
             setUserAddress(zkLoginUserAddress);
 
