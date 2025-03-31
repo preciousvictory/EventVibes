@@ -36,6 +36,8 @@ export default function ZkLoginCallback() {
             const sessionData = getSessionData();
             if (!sessionData) throw new Error('Session data not found');
 
+            // const jwtPayload = jwtDecode(id_token);
+
             const decodedJwt = jwtDecode(idToken);
             if (!decodedJwt.sub) throw new Error('Missing sub claim');
 
