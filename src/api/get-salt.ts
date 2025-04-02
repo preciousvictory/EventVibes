@@ -2,7 +2,7 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import axios from 'axios';
 
 // Import shared types
-import { SaltRequest, SaltResponse } from '../types';
+import { SaltRequest } from '../types';
 
 export default async function getSaltHandler(
   req: VercelRequest,
@@ -31,7 +31,7 @@ export default async function getSaltHandler(
     }
 
     // Call Mysten Labs API
-    const response = await axios.post<SaltResponse>(
+    const response = await axios.post(
       'https://salt.api.mystenlabs.com/get_salt',
       { token },
       {
