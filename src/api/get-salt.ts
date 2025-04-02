@@ -10,7 +10,7 @@ export default async function getSaltHandler(
 ) {
   // Set CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   // Handle preflight request
@@ -33,20 +33,23 @@ export default async function getSaltHandler(
     // Call Mysten Labs API
     const response = await axios.post<SaltResponse>(
       'https://salt.api.mystenlabs.com/get_salt',
-      { token }
+      { token },
+      {
+        headers: { 'Content-Type': 'application/json' },
+      }
     );
 
     // Return the salt to the frontend
     return res.status(200).json(response.data);
   } catch (error) {
     console.error('Error in get-salt API:', error);
-    
+
     if (axios.isAxiosError(error)) {
       return res.status(error.response?.status || 500).json({
-        error: error.response?.data?.message || 'Failed to fetch salt'
+        error: error.response?.data?.message || 'Failed to fetch salt',
       });
     }
-    
+
     return res.status(500).json({ error: 'Internal server error' });
   }
 }
