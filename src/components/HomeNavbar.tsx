@@ -98,7 +98,7 @@ export const Navbar: React.FC = () => {
           <motion.button
             className="flex cursor-pointer"
             onClick={() => scrollToSection('hero')}
-            whileHover={{ scale: 1.02, backgroundColor: '#8A8A8A' }}
+            whileHover={{ scale: 1.2,  }}
             whileTap={{ scale: 0.98 }}
             transition={{ type: "spring", stiffness: 400, damping: 30 }}
           >
@@ -106,11 +106,11 @@ export const Navbar: React.FC = () => {
           </motion.button>
 
           {/* Navigation Links */}
-          <ul className="hidden lg:flex gap-2 items-center">
+          <ul className="hidden lg:flex gap-6 items-center">
             {navLinks.map((link) => (
               <motion.li
                 key={link.name}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.05, backgroundColor: "var(--primary)", borderRadius: "8px", padding: "8px 16px", cursor: "pointer" }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 30 }}
               >
