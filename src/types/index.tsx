@@ -22,3 +22,15 @@ export interface JwtPayload {
     maxEpoch: number;
     jwt: string;
   }
+
+  export interface SaltRequest {
+    token: string;
+  }
+  
+  export interface SaltResponse {
+    salt: string;
+  }
+  
+  export interface ApiError {
+    error: string;
+  }

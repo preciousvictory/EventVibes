@@ -20,7 +20,6 @@ export default function ZkLoginCallback() {
     const navigate = useNavigate();
     const FULLNODE_URL = import.meta.env.VITE_FULLNODE_URL;
     const PROVER_URL = import.meta.env.VITE_PROVER_URL;
-    const VITE_SALT_API_URL = import.meta.env.VITE_SALT_API_URL
 
     if (!FULLNODE_URL || !PROVER_URL) {
         throw new Error("Missing required environment variables");
@@ -54,44 +53,27 @@ export default function ZkLoginCallback() {
         }
     }, []);
 
-    const getSalt = useCallback(async (jwtToken: string): Promise<string> => {
+    const getSalt = async (token: string): Promise<string> => {
         try {
-            if (!jwtToken) {
-                throw new Error('JWT token is required');
-            }
-
-            const response = await fetch(VITE_SALT_API_URL, {
-                method: 'POST',
-                mode: 'cors',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    token: jwtToken
-                }),
-            });
-
-            if (!response.ok) {
-                const errorData = await response.json().catch(() => ({}));
-                throw new Error(
-                    errorData.message ||
-                    `Failed to fetch salt: ${response.statusText}`
-                );
-            }
-
-            const data: SaltResponse = await response.json();
-
-            if (!data?.salt) {
-                throw new Error('Invalid salt response format');
-            }
-
-            return data.salt;
+          const response = await axios.post<SaltResponse>(
+            `/api/get-salt`,
+            { token }
+          );
+          
+          if (!response.data.salt) {
+            throw new Error('Invalid salt response');
+          }
+          
+          return response.data.salt;
         } catch (error) {
-            console.error('Error in getSalt callback:', error);
-            throw error;
+          console.error('Error fetching salt:', error);
+          throw new Error(
+            axios.isAxiosError(error) 
+              ? error.response?.data?.error || 'Failed to fetch salt'
+              : 'Network error'
+          );
         }
-    }, []);
-
+      };
 
     // Step 4: Fetch ZK Proof
     const fetchZkProof = useCallback(async (jwt: string): Promise<ZkProofResult> => {
