@@ -62,6 +62,7 @@ export default function ZkLoginCallback() {
 
             const response = await fetch(VITE_SALT_API_URL, {
                 method: 'POST',
+                mode: 'cors',
                 headers: {
                     'Content-Type': 'application/json',
                 },
