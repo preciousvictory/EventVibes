@@ -9,10 +9,6 @@ import { ZkProofResult } from '../../types';
 import { Ed25519Keypair } from '@mysten/sui/keypairs/ed25519';
 import { getSessionData } from '../../lib/zkLoginUtils';
 
-interface SaltResponse {
-    salt: string;
-}
-
 export default function ZkLoginCallback() {
     const [error, setError] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(true);
@@ -55,10 +51,8 @@ export default function ZkLoginCallback() {
 
     const getSalt = async (token: string): Promise<string> => {
         try {
-          const response = await axios.post<SaltResponse>(
-            `/api/get-salt`,
-            { token }
-          );
+            const response = await axios.post('/api/get-salt', { token });
+
           
           if (!response.data.salt) {
             throw new Error('Invalid salt response');
